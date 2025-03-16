@@ -126,7 +126,7 @@ function App() {
                 <div className="form-group">
                   <textarea placeholder="Your Message" rows="5" required></textarea>
                 </div>
-                <button type="submit" className="submit-button">Send Message</button>
+                <button type="submit" className="submit-button">Send Message!</button>
               </form>
             </div>
             <div className="contact-info">
