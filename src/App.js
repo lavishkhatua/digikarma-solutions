@@ -40,11 +40,12 @@ function App() {
       </header>
 
       <section id="home" className="hero">
+        <div className="animated-bg"></div>
         <div className="container">
           <div className="hero-content">
-            <h1>Transform Your Digital Presence</h1>
-            <p>Innovative web solutions to help your business thrive in the digital world</p>
-            <button className="cta-button" onClick={() => scrollToSection('contact')}>Get Started</button>
+            <h1 className="animated-title">Transform Your Digital Presence</h1>
+            <p className="animated-subtitle">Innovative web solutions to help your business thrive in the digital world</p>
+            <button className="cta-button pulse" onClick={() => scrollToSection('contact')}>Get Started</button>
           </div>
         </div>
       </section>
@@ -134,27 +135,26 @@ function App() {
                 <div className="info-icon">📍</div>
                 <div className="info-text">
                   <h4>Address</h4>
-                  <p>123 Digital Avenue, Tech City, 54321</p>
+                  <p>Sri Ganganagar (Raj.)</p>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon">📞</div>
                 <div className="info-text">
                   <h4>Phone</h4>
-                  <p>+1 (555) 123-4567</p>
+                  <p>+91 9783473502</p>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon">✉️</div>
                 <div className="info-text">
                   <h4>Email</h4>
-                  <p>info@digikarma.solutions</p>
+                  <p>aitech.lavish@gmail.com</p>
                 </div>
               </div>
               <div className="social-links">
+                <a href="https://www.instagram.com/digikarma_solutions/" className="social-icon">IG</a>
                 <a href="#" className="social-icon">FB</a>
-                <a href="#" className="social-icon">TW</a>
-                <a href="#" className="social-icon">IG</a>
                 <a href="#" className="social-icon">LI</a>
               </div>
             </div>
@@ -169,7 +169,7 @@ function App() {
               <span className="logo-text">DigiKarma</span>
               <span className="logo-accent">Solutions</span>
             </div>
-            <p className="copyright">© 2025 DigiKarma Solutions. All Rights Reserved.</p>
+            <p className="copyright">© 2018 DigiKarma Solutions. All Rights Reserved.</p>
           </div>
         </div>
       </footer>
@@ -178,12 +178,16 @@ function App() {
 }
 
 function ServiceCard({ title, description, icon }) {
+  const scrollToContact = () => {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="service-card">
       <div className="service-icon">{icon}</div>
       <h3 className="service-title">{title}</h3>
       <p className="service-description">{description}</p>
-      <button className="service-button">Learn More</button>
+      <button className="service-button" onClick={scrollToContact}>Learn More</button>
     </div>
   );
 }

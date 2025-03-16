@@ -116,7 +116,7 @@ section {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to right, rgba(77, 19, 209, 0.9), rgba(0, 198, 255, 0.9)), url('/api/placeholder/1200/600') no-repeat center center;
+  background: linear-gradient(to right, rgba(77, 19, 209, 0.9), rgba(0, 198, 255, 0.9)), url('https://picsum.photos/1200/600') no-repeat center center;
   background-size: cover;
   color: white;
   min-height: 100vh;
@@ -269,7 +269,7 @@ section {
 }
 
 .image-placeholder {
-  background: url('/api/placeholder/600/400') no-repeat center center;
+  background: url('https://picsum.photos/600/400') no-repeat center center;
   background-size: cover;
   height: 400px;
   border-radius: 10px;
@@ -504,4 +504,136 @@ section {
   .social-links {
     justify-content: center;
   }
+}
+
+/* Add to your CSS file */
+.particles-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.cta-button {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(77, 19, 209, 0.9), rgba(0, 198, 255, 0.9)), url('https://picsum.photos/1200/600') no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: pulse-bg 8s ease-in-out infinite;
+}
+
+@keyframes pulse-bg {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+.hero .container {
+  position: relative;
+  z-index: 5;
+}
+
+.animated-title {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.animated-subtitle {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-button.pulse {
+  animation: pulse 2s infinite;
+  animation-delay: 0.6s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button.pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 200%;
+  background: rgba(255,255,255,0.2);
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.cta-button.pulse:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.5);
 }
