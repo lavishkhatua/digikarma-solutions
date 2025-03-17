@@ -637,3 +637,324 @@ section {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(45deg) scale(1.5);
 }
+
+/* Add these styles to your App.css file */
+
+/* Pricing Section */
+.pricing {
+  background-color: var(--light);
+  padding: 100px 0;
+}
+
+.pricing-subtitle {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: var(--text-light);
+  font-size: 18px;
+}
+
+.pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.pricing-toggle span {
+  font-size: 16px;
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.m-10{
+  margin: 10px;
+}
+
+.pricing-toggle span.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.discount {
+  background-color: var(--secondary);
+  color: white !important;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 5px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #5c25e8; /* Purple */
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px); /* Move the toggle */
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Pricing Cards */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.pricing-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  border: 1px solid var(--gray);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--primary);
+  transform: scale(1.05);
+}
+
+.pricing-card.popular:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pricing-header {
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid var(--gray);
+}
+
+.pricing-header h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.price {
+  margin-bottom: 10px;
+}
+
+.currency {
+  font-size: 24px;
+  font-weight: 600;
+  vertical-align: top;
+  position: relative;
+  top: 5px;
+}
+
+.amount {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.period {
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.pricing-header .pricing-subtitle {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.pricing-body {
+  padding: 30px;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.feature-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(77, 19, 209, 0.1);
+  color: var(--primary);
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pricing-footer {
+  padding: 0 30px 30px;
+  text-align: center;
+}
+
+.pricing-button {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--primary);
+  border-radius: 30px;
+  background-color: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pricing-button:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.pricing-button.featured {
+  background-color: var(--primary);
+  color: white;
+}
+
+.pricing-button.featured:hover {
+  background-color: #3b0faf;
+  border-color: #3b0faf;
+}
+
+/* Custom Plan */
+.custom-plan {
+  text-align: center;
+  background: linear-gradient(to right, rgba(77, 19, 209, 0.05), rgba(0, 198, 255, 0.05));
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.custom-plan h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.custom-plan p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  color: var(--text-light);
+}
+
+.custom-plan-button {
+  background-color: var(--secondary);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.custom-plan-button:hover {
+  background-color: #ff5252;
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .pricing-card.popular {
+    transform: scale(1);
+  }
+  
+  .pricing-card.popular:hover {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing {
+    padding: 60px 0;
+  }
+  
+  .pricing-cards {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-toggle {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .pricing-header {
+    padding: 20px;
+  }
+  
+  .pricing-body {
+    padding: 20px;
+  }
+  
+  .amount {
+    font-size: 36px;
+  }
+}

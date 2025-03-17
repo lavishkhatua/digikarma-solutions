@@ -4,6 +4,8 @@ import './App.css';
 function App() {
   const [activeNavItem, setActiveNavItem] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
+  // Add this at the top of your App component
+const [isAnnual, setIsAnnual] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -34,6 +36,7 @@ function App() {
               <li className={activeNavItem === 'services' ? 'active' : ''} onClick={() => scrollToSection('services')}>Services</li>
               <li className={activeNavItem === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>About</li>
               <li className={activeNavItem === 'contact' ? 'active' : ''} onClick={() => scrollToSection('contact')}>Contact</li>
+              <li className={activeNavItem === 'pricing' ? 'active' : ''} onClick={() => scrollToSection('pricing')}>Pricing</li>
             </ul>
           </nav>
         </div>
@@ -103,6 +106,160 @@ function App() {
             <div className="about-image">
               <div className="image-placeholder"></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="pricing">
+        <div className="container">
+          <h2 className="section-title">Our Pricing Plans</h2>
+          <p className="pricing-subtitle">Choose the perfect plan for your business needs</p>
+          
+          <div className="pricing-toggle">
+            <span className={!isAnnual ? 'active m-10' : 'm-10'}>Monthly</span>
+            <label className="switch">
+              <input type="checkbox" checked={isAnnual} onChange={() => setIsAnnual(!isAnnual)} />
+              <span className="slider round"></span>
+            </label>
+            <span className={isAnnual ? 'active m-10' : 'm-10'}>Annual <span className="discount">Save 20%</span></span>
+          </div>
+          
+          <div className="pricing-cards">
+            <div className="pricing-card">
+              <div className="pricing-header">
+                <h3>Basic</h3>
+                <div className="price">
+                  <span className="currency">$</span>
+                  <span className="amount">{isAnnual ? '399' : '499'}</span>
+                  <span className="period">{isAnnual ? '/month' : '/month'}</span>
+                </div>
+                <p className="pricing-subtitle">Perfect for small businesses</p>
+              </div>
+              <div className="pricing-body">
+                <ul className="pricing-features">
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Basic SEO Optimization</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Responsive Website Design</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">5 Web Pages</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">1 Logo Design</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Monthly Performance Report</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="pricing-footer">
+                <button className="pricing-button" onClick={() => scrollToSection('contact')}>Get Started</button>
+              </div>
+            </div>
+            
+            <div className="pricing-card popular">
+              <div className="popular-tag">Most Popular</div>
+              <div className="pricing-header">
+                <h3>Pro</h3>
+                <div className="price">
+                  <span className="currency">$</span>
+                  <span className="amount">{isAnnual ? '799' : '999'}</span>
+                  <span className="period">{isAnnual ? '/month' : '/month'}</span>
+                </div>
+                <p className="pricing-subtitle">Ideal for growing businesses</p>
+              </div>
+              <div className="pricing-body">
+                <ul className="pricing-features">
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Advanced SEO Optimization</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Custom Website Design</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">10 Web Pages</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">3 Logo Concepts</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Social Media Integration</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Bi-weekly Performance Reports</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="pricing-footer">
+                <button className="pricing-button featured" onClick={() => scrollToSection('contact')}>Get Started</button>
+              </div>
+            </div>
+            
+            <div className="pricing-card">
+              <div className="pricing-header">
+                <h3>Enterprise</h3>
+                <div className="price">
+                  <span className="currency">$</span>
+                  <span className="amount">{isAnnual ? '1599' : '1999'}</span>
+                  <span className="period">{isAnnual ? '/month' : '/month'}</span>
+                </div>
+                <p className="pricing-subtitle">For established businesses</p>
+              </div>
+              <div className="pricing-body">
+                <ul className="pricing-features">
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Premium SEO Strategy</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Custom Web Development</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Unlimited Web Pages</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Complete Brand Identity</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">E-commerce Integration</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Weekly Performance Reports</span>
+                  </li>
+                  <li>
+                    <span className="feature-icon">✓</span>
+                    <span className="feature-text">Dedicated Account Manager</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="pricing-footer">
+                <button className="pricing-button" onClick={() => scrollToSection('contact')}>Get Started</button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="custom-plan">
+            <h3>Need a custom plan?</h3>
+            <p>We offer tailored solutions to meet your specific business requirements.</p>
+            <button className="custom-plan-button" onClick={() => scrollToSection('contact')}>Contact Us</button>
           </div>
         </div>
       </section>
